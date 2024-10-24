@@ -5,12 +5,8 @@ from flask_cors import CORS
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from flask_jwt_extended import jwt_required, get_jwt_identity, verify_jwt_in_request
 
-
 api = Blueprint('api', __name__)
-
-# Allow CORS requests to this API
 CORS(api)
-
 
 @api.route('/verify-token', methods=['POST'])
 def verify_token():
